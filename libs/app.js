@@ -1,11 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const createError = require('http-errors');
+require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Initialize DB
+require('../initDB')();
 
 // CORS options
 const corsOptions = {
@@ -19,13 +23,7 @@ const corsOptions = {
 // Use CORS middleware with options
 app.use(cors(corsOptions));
 
-mongoose.connect('mongodb+srv://ammar:ammar123@vehicle.hsros5q.mongodb.net/SafeDrive')
-    .then(() => {
-        console.log('MongoDB connected...');
-    })
-    .catch(error => {
-        console.error('MongoDB connection error:', error);
-    });
+
 
 const ServiceRequestRoute = require('../routes/ServiceRequest.route');
 const VehicleMakeRequestRoute = require('../routes/VehicleMakeRequest.route');
@@ -37,9 +35,8 @@ app.use('/servicerequest', ServiceRequestRoute);
 app.use('/vehiclemake', VehicleMakeRequestRoute);
 
 app.use((req, res, next) => {
-    const err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+
+    next(createError(404,'Not found'))
 });
 
 // Error Handler
