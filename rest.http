@@ -1,0 +1,20 @@
+POST http://localhost:3000/servicerequest
+Content-Type: application/json
+
+{
+  "vehicleMake": "toyota",
+  "vehicleModel": "prius",
+  "serviceCenter": "colombo center",
+  "specificServices": "oil change",
+  "dateTime": "02/05/2022"
+}
+
+###
+POST http://localhost:3000/servicerequest
+
+
+###
+GET http://localhost:3000/vehiclemake
+
+
+
