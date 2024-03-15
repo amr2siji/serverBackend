@@ -6,7 +6,10 @@ Content-Type: application/json
   "vehicleModel": "prius",
   "serviceCenter": "colombo center",
   "specificServices": "oil change",
-  "dateTime": "02/05/2022"
+  "dateTime": "02/05/2022",
+  "timeSlot" : "1pm-3pm",
+  "userEmail": "abc@gmail.com",
+  "status" : "pending"
 }
 
 ###

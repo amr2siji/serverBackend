@@ -38,6 +38,18 @@ const ServiceRquestSchema = new Schema({
         lowercase: true,
         required:true,
 
+    },
+    userEmail:{
+        type:String,
+        lowercase: true,
+        required:true,
+
+    },
+    status :{
+        type : String,
+        lowercase: true,
+        required:true
+
     }
 
 });
