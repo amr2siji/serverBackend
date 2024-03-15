@@ -32,6 +32,12 @@ const ServiceRquestSchema = new Schema({
         lowercase: true,
         required:true,
 
+    },
+    timeSlot:{
+        type:String,
+        lowercase: true,
+        required:true,
+
     }
 
 });
