@@ -34,8 +34,26 @@ module.exports = {
         }catch (error){
             console.log(error.message);
         }
-    }
+    },
 
+    // update the status of the request
+
+    updateStatusRequestDetails: async (req, res, next) => {
+        try {
+            await ServiceRequestModel.findOneAndUpdate(
+                { status: "pending" }, // Filter
+                { status: "approved" }, // Update
+                { new: true } // Return the modified document
+            );
+            console.log("Status updated successfully!");
+        } catch (error) {
+            console.error("Error updating status:", error);
+            res.status(500).json({ error: "Internal Server Error" }); // Send error response
+            return; // Exit from the function to prevent further execution
+        } finally {
+            // Do not disconnect mongoose here, as it might be used elsewhere in your application
+        }
+    }
 
 
 };

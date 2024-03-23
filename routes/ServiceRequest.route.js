@@ -8,6 +8,10 @@ router.get('/',ServiceRequestController.getServiceRequestDetails);
 // add a service request appointment
 router.post('/',ServiceRequestController.addServiceRequestDetails);
 
+// update status of service request
+router.patch('/',ServiceRequestController.updateStatusRequestDetails);
+
+
 
 module.exports = router;
 
