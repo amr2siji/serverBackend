@@ -11,7 +11,8 @@ router.post('/',ServiceRequestController.addServiceRequestDetails);
 // update status of service request
 router.patch('/',ServiceRequestController.updateStatusRequestDetails);
 
-
+// delete request
+router.delete('/',ServiceRequestController.deleteRequestDetails);
 
 module.exports = router;
 

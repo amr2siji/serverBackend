@@ -27,12 +27,16 @@ app.use(cors(corsOptions));
 
 const ServiceRequestRoute = require('../routes/ServiceRequest.route');
 const VehicleMakeRequestRoute = require('../routes/VehicleMakeRequest.route');
+const ProfileViewRotes = require('../routes/ProfileDetails.route')
 
 // Service Center Request route
 app.use('/servicerequest', ServiceRequestRoute);
 
 // Vehicle make details get route
 app.use('/vehiclemake', VehicleMakeRequestRoute);
+
+// profile details route
+app.use('/profiledetails',ProfileViewRotes)
 
 app.use((req, res, next) => {
 

@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 const ServiceRquestSchema = new Schema({
 
     vehicleMake :{
-      type : String,
-      lowercase:true,
-      required: true,
+        type : String,
+        lowercase:true,
+        required: true,
     },
 
     vehicleModel :{
-      type: String,
-      lowercase:true,
-      required:true,
+        type: String,
+        lowercase:true,
+        required:true,
     },
 
     serviceCenter:{
