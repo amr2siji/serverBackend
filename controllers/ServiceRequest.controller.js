@@ -4,6 +4,7 @@ const createError = require('http-errors');
 // Get Service Request details
 
 module.exports = {
+
     getServiceRequestDetails : async (req,res,next) =>{
         try {
             const results = await ServiceRequestModel.find();
@@ -46,6 +47,9 @@ module.exports = {
                 { new: true } // Return the modified document
             );
             console.log("Status updated successfully!");
+
+            // Send 200 response
+            res.status(200).send("Status updated successfully!");
         } catch (error) {
             console.error("Error updating status:", error);
             res.status(500).json({ error: "Internal Server Error" }); // Send error response
@@ -54,6 +58,7 @@ module.exports = {
             // Do not disconnect mongoose here, as it might be used elsewhere in your application
         }
     }
+
 
 
 };
