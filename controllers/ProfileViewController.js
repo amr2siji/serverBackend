@@ -3,6 +3,7 @@ const createError = require('http-errors');
 
 module.exports= {
 
+    // update profile details
     updateProfileViewDetails: async (req, res, next) => {
         try {
             const {email, newName, newMobile, newProvince, newDistrict} = req.body;
@@ -40,8 +41,19 @@ module.exports= {
                 message: 'Internal server error'
             });
         }
-
-
+        
     },
+
+    // get service center details
+    getNameOfServiceCenterProfiles: async (req, res, next) => {
+        try {
+            const serviceCenterProfiles = await ProfileVIewModel.find({ role: 'Service Center' }, 'name');
+            const names = serviceCenterProfiles.map(profile => profile.name);
+            res.status(200).json({ names });
+        } catch (error) {
+            console.error('Error:', error);
+            res.status(500).json({ error: 'An error occurred while fetching service center profiles.' });
+        }
+    }
 
 }

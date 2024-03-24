@@ -15,7 +15,6 @@ const ProfileViewSchema = new Schema({
 
     role :{
         type: String,
-        lowercase:true,
     },
 
     mobile:{

@@ -14,9 +14,9 @@ POST http://localhost:3000/servicerequest
 Content-Type: application/json
 
 {
-  "vehicleMake": "BMW",
-  "vehicleModel": "320d",
-  "serviceCenter": "Matara center",
+  "vehicleMake": "toyota",
+  "vehicleModel": "corolla",
+  "serviceCenter": "Galle center",
   "specificServices": "oil change",
   "dateTime": "02/05/2022",
   "timeSlot" : "1pm-3pm",
@@ -25,11 +25,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/servicerequest
+GET http://localhost:3000/profiledetails
 
 
 ###
 GET http://localhost:3000/vehiclemake
-
 
 
